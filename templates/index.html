@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WildGuess</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark bg-dark px-4">
+      <span class="navbar-brand">WildGuess</span>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="container mt-5 text-center">
+      <h1>What's that animal?</h1>
+      <p class="text-muted mt-2">
+        Upload a photo and let WildGuess prove you right (or wrong)
+      </p>
+      <p class="text-muted" style="font-size: 0.9rem">
+        WildGuess knows 10 animals — everything else is a mystery 🤷
+      </p>
+      <div class="mt-2 d-flex flex-wrap justify-content-center gap-2">
+        <span class="badge bg-secondary">Butterfly</span>
+        <span class="badge bg-secondary">Cat</span>
+        <span class="badge bg-secondary">Chicken</span>
+        <span class="badge bg-secondary">Cow</span>
+        <span class="badge bg-secondary">Dog</span>
+        <span class="badge bg-secondary">Elephant</span>
+        <span class="badge bg-secondary">Horse</span>
+        <span class="badge bg-secondary">Sheep</span>
+        <span class="badge bg-secondary">Spider</span>
+        <span class="badge bg-secondary">Squirrel</span>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
