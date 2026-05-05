@@ -1,5 +1,5 @@
 # .gitignore
 *.h5
 *.pt
-#data/raw/**/*
-#!data/raw/**/.gitkeep
+data/raw/**/*
+!data/raw/**/.gitkeep
