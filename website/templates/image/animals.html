@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Upload new File</h1>
+    <img src="{{file}}" id="preview">
+    <br>
+    <form method=post enctype=multipart/form-data>
+        <input type="file" name="file" id="filetag">
+        <input type="submit" value="Evaluate">
+    </form>
+
+{% endblock %}

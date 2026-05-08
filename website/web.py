@@ -1,0 +1,14 @@
+from flask import Flask, render_template
+
+from website.routes.image import image_bp
+
+
+app = Flask(__name__)
+app.register_blueprint(image_bp)
+app.config['SECRET_KEY'] = 'secret!'
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    app.run()
