@@ -33,7 +33,8 @@ def evaluate_image():
 
     if file.filename == '':
         return jsonify({"error": "Ingen fil är vald ännu"}), 400
-
+    
+    file.seek(0)
     image = Image.open(file).convert('RGB')
     image = transform(image).unsqueeze(0)
 
