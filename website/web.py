@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from website.routes.image import image_bp
-from routes.api import api_bp
+from website.routes.api import api_bp
 
 
 app = Flask(__name__)
