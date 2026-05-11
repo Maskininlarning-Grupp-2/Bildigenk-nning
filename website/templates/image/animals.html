@@ -7,5 +7,9 @@
         <input type="file" name="file" id="filetag">
         <input type="submit" value="Evaluate">
     </form>
+    <br>
+    {% if animal != "" %}
+        This is a {{animal}}, I'm {{accuracy}} sure!
+    {% endif %}
 
 {% endblock %}
