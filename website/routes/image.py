@@ -19,7 +19,6 @@ def animals():
             # Retrieve result
             response = evaluate_image()
             data = json.loads(response.get_data(as_text=True))
-            data = eval(data)
             accuracy = data['accuracy']
             animal = data['animal']
             filename = secure_filename(image.filename)
