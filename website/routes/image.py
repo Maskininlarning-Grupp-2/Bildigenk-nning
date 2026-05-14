@@ -18,7 +18,7 @@ def animals():
 
             # Retrieve result
             response = evaluate_image()
-            data = response.get_data().decode('utf-8').replace('true', 'True')
+            data = json.loads(response.get_data(as_text=True))
             data = eval(data)
             accuracy = data['accuracy']
             animal = data['animal']
