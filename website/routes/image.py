@@ -1,6 +1,6 @@
 import ast
 import json
-import os.path
+import os
 from flask import Blueprint, request, redirect, flash, url_for, render_template
 from werkzeug.utils import secure_filename
 
@@ -14,8 +14,8 @@ def animals():
     if request.method == 'POST':
         image = request.files['file']
         PATH = './website/static/assets/images/temp/'
+        os.makedirs(PATH, exist_ok=True)  # Skapa mappen om den inte finns
         if image and allowed_file(image.filename):
-
             # Retrieve result
             response = evaluate_image()
             data = json.loads(response.get_data(as_text=True))
