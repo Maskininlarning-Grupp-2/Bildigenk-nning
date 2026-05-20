@@ -27,5 +27,5 @@ def animals():
                     os.remove(os.path.join(PATH, file))
             image.seek(0)
             image.save(os.path.join(PATH, filename))
-            return render_template("image/animals.html", file=os.path.join('/static/assets/images/temp/', filename), accuracy=accuracy, animal=animal)
+            return render_template("image/animals.html", accuracy=accuracy, animal=animal)
     return render_template("image/animals.html", file = "", accuracy = "", animal = "")
