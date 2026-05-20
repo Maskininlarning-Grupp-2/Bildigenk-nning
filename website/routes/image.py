@@ -21,11 +21,5 @@ def animals():
             data = json.loads(response.get_data(as_text=True))
             accuracy = data['accuracy']
             animal = data['animal']
-            filename = secure_filename(image.filename)
-            if len(os.listdir(PATH)) > 0:
-                for file in os.listdir(PATH):
-                    os.remove(os.path.join(PATH, file))
-            image.seek(0)
-            image.save(os.path.join(PATH, filename))
             return render_template("image/animals.html", accuracy=accuracy, animal=animal)
     return render_template("image/animals.html", file = "", accuracy = "", animal = "")
