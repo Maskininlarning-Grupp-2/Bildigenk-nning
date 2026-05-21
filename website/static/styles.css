@@ -1,6 +1,7 @@
 
 :root {
-    --bg-color: red;
+    --bg-color: gray;
+    --text-color-comp: white;
 }
 
 /* MAIN PAGE */
@@ -45,6 +46,7 @@ body {
     grid-row-start: 3;
 }
 
+
 #preview {
     display: none;
 }
@@ -52,6 +54,7 @@ body {
 /* NAVBAR */
 header {
     background-color: var(--bg-color);
+    color: var(--text-color-comp);
 }
 
 ul {
@@ -73,6 +76,11 @@ nav ul {
 /* FOOTER */
 footer{
   background-color: var(--bg-color);
+  color: var(--text-color-comp);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 footer p{
