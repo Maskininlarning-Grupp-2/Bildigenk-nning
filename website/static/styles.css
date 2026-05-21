@@ -1,3 +1,94 @@
+
+:root {
+    --bg-color: gray;
+    --text-color-comp: white;
+}
+
+/* MAIN PAGE */
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+#parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+#middlePage {
+    -moz-box-shadow: -3px 0 5px 0 #555;
+    -webkit-box-shadow: -3px 0 5px 0 #555;
+    box-shadow: -3px 0 5px 0 #555;
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+
+
+/* ANIMAL RECOGNITION PAGE */
+
+#fileDisplay {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+#fileUpload {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#resultDisplay {
+    grid-row: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+
+#preview {
+    display: none;
+}
+
+/* NAVBAR */
+header {
+    background-color: var(--bg-color);
+    color: var(--text-color-comp);
+}
+
+ul {
+	list-style: none;
+}
+
+header nav{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* FOOTER */
+footer{
+  background-color: var(--bg-color);
+  color: var(--text-color-comp);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p{
+  margin-bottom: 0;
+  text-align: center;
+}
+
+
 img {
     width: 500px;
     height: 500px;

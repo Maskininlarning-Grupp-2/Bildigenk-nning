@@ -10,14 +10,14 @@ fileTag.addEventListener("change", function() {
             reader = new FileReader();
 
             reader.onload = function(e) {
-              preview.setAttribute('src', e.target.result);
+                preview.setAttribute('src', e.target.result);
             }
+            preview.style.display = "block"
 
             reader.readAsDataURL(this.files[0]);
         }
     } else {
-        preview.setAttribute('src', "")
-        this.value = ""
+        preview.style.display = "none"
         console.log("Fel filtyp! Endast jpg, jpeg och png är tillåtna.")
     }
 });
