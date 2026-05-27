@@ -6,11 +6,19 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    {% include 'components/_navbar.html' %}
     <main>
+        <div id="parent">
+            <div id="sidebarLeft"></div>
+            <div id="middlePage">
         {% block content %}
         <!-- Each page will put its content here -->
         {% endblock %}
+            </div>
+        <div id="sidebarRight"></div>
+        </div>
     </main>
+    {% include 'components/_footer.html' %}
 </body>
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 </html>
