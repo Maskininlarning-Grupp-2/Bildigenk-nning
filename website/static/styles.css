@@ -13,37 +13,66 @@ body {
 }
 
 #parent {
+    margin-top: 3%;
+    margin-bottom: 3%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
 }
 
 #middlePage {
-    -moz-box-shadow: -3px 0 5px 0 #555;
-    -webkit-box-shadow: -3px 0 5px 0 #555;
-    box-shadow: -3px 0 5px 0 #555;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 10px 7px;
     grid-column-start: 2;
     grid-row-start: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    align-items: center;
 }
-
-
 
 /* ANIMAL RECOGNITION PAGE */
 
 #fileDisplay {
     grid-column-start: 2;
-    grid-row-start: 1;
+    grid-row: span 7 / span 7;
+}
+
+#drop-area {
+    text-align: center;
+}
+
+#preview-block {
+    align-items: center;
+    cursor: pointer;
+    width: 500px;
+    height: 300px;
+    transform: scale(1);
+    border-radius: 20px;
+    border: 2px solid var(--bg-color);
+    background: center center / cover rgb(247, 248, 255);
+    background-position: center center;
+    transition: 0.3s;
+}
+
+#preview-block:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
 }
 
 #fileUpload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-column-start: 2;
-    grid-row-start: 2;
+    grid-row-start: 8;
 }
 
 #resultDisplay {
-    grid-row: span 3 / span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-column-start: 2;
-    grid-row-start: 3;
+    grid-row-start: 9;
 }
 
 
