@@ -102,6 +102,15 @@ nav ul {
   gap: 0.5rem;
 }
 
+input[type="submit"] {
+    cursor: pointer;
+    font-size: 100%;
+    flex-direction: row;
+    border: 1px solid var(--bg-color);
+    padding: 16px 32px;
+    border-radius: 20px;
+}
+
 /* FOOTER */
 footer{
   background-color: var(--bg-color);
