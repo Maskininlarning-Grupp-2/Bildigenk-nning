@@ -1,12 +1,20 @@
 {% extends "layout.html" %}
 {% block content %}
         <div id="fileDisplay">
-            <h1>Upload new File</h1>
-            <img src="{{file}}" id="preview">
+            <h1>Animal AI Identifier</h1>
+            <label for="filetag" id="drop-area">
+                <input type="file" accept="image/" name="file" id="filetag" hidden>
+                <div id="preview-block">
+                    <div id="textField-preview-block">
+                        <h1>Upload new File</h1>
+                        <p>Drag and drop or click</p>
+                        <p>to upload image</p>
+                    </div>
+                </div>
+            </label>
         </div>
         <div id="fileUpload">
             <form id="evaluateForm" enctype=multipart/form-data>
-                <input type="file" name="file" id="filetag">
                 <input type="submit" value="Evaluate">
             </form>
         </div>

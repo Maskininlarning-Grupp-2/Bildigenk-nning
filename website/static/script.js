@@ -1,26 +1,50 @@
 var fileTag = document.getElementById("filetag"),
-    preview = document.getElementById("preview");
+    preview = document.getElementById("preview"),
+    dropArea = document.getElementById('drop-area'),
+    previewBlock = document.getElementById("preview-block"),
+    previewText = document.getElementById("textField-preview-block");
 
-fileTag.addEventListener("change", function() {
+fileTag.addEventListener("change", uploadFile) /*{
     const ext = this.files[0].name.split('.').pop().toLowerCase();
-    if (ext === 'jpg' || ext === 'jpeg' || ext === 'png') {
-        var reader;
+    var reader;
+    if (this.files && this.files[0]) {
+        reader = new FileReader();
 
-        if (this.files && this.files[0]) {
-            reader = new FileReader();
-
-            reader.onload = function(e) {
-                preview.setAttribute('src', e.target.result);
-            }
-            preview.style.display = "block"
-
-            reader.readAsDataURL(this.files[0]);
+        reader.onload = function(e) {
+            preview.setAttribute('src', e.target.result);
         }
-    } else {
-        preview.style.display = "none"
-        console.log("Fel filtyp! Endast jpg, jpeg och png är tillåtna.")
+        preview.style.display = "block"
+
+        reader.readAsDataURL(this.files[0]);
     }
-});
+
+});*/
+
+function uploadFile() {
+    var file = fileTag.files[0];
+    var fileType = file['type'];
+    var validImageTypes = ["image/gif", "image/jpeg", "image/png", "image/webp", "image/avif"];
+    if (validImageTypes.includes(fileType)) {
+        let imgLink = URL.createObjectURL(file);
+        previewBlock.style.backgroundImage = `url(${imgLink})`;
+        previewBlock.textContent = "";
+    } else {
+        fileTag.value = null
+        previewBlock.style.backgroundImage = "";
+        previewBlock.innerHTML = "<h1>Upload new File</h1><p>Drag and drop or click</p><p>to upload image</p>"
+    }
+
+}
+
+dropArea.addEventListener('dragover', function(e) {
+    e.preventDefault();
+})
+
+dropArea.addEventListener('drop', function(e) {
+    e.preventDefault();
+    fileTag.files = e.dataTransfer.files;
+    uploadFile();
+})
 
 const form = document.getElementById("evaluateForm");
 
