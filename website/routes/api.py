@@ -7,11 +7,10 @@ from PIL import Image
 
 api_bp = Blueprint('api', __name__)
 
-classes = ['butterfly', 'cat', 'chicken', 'cow', 'dog',
-           'elephant', 'horse', 'sheep', 'spider', 'squirrel']
+classes = ['butterfly', 'cat', 'chicken', 'cow', 'dog', 'elephant', 'horse', 'human', 'lion', 'sheep', 'spider', 'squirrel']
 
 model = models.resnet18(weights=None)
-model.fc = nn.Linear(model.fc.in_features, 10)
+model.fc = nn.Linear(model.fc.in_features, 12)
 model.load_state_dict(torch.load(
     'models/resnet18_animals.pth', map_location='cpu'))
 model.eval()
