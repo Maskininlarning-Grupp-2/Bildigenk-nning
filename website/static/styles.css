@@ -70,6 +70,7 @@ body {
 }
 
 #resultDisplay {
+    transform: scale(1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,9 +80,11 @@ body {
 
 #resultDisplay.active-animation {
     animation: appear 0.5s 1;
+    transform: scale(1);
 }
 #resultDisplay.inactive-animation {
-    animation: appear 0.5s 1;
+    animation: disappear 0.5s 1;
+    transform: scale(0);
 }
 
 #preview {
@@ -153,9 +156,17 @@ img {
 /* ANIMATION :D */
 @keyframes appear {
     from {
-        transform:scale(0.1);
+        transform:scale(0);
     }
     to {
         transform:scale(1.0);
+    }
+}
+@keyframes disappear {
+    from {
+        transform:scale(1.0);
+    }
+    to {
+        transform:scale(0);
     }
 }

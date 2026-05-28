@@ -2,11 +2,10 @@ from flask import Flask, render_template
 from website.routes.image import image_bp
 from website.routes.api import api_bp
 import sys
+import socket
 
-host = False
+host = True
 
-if host:
-    import socket
 
 app = Flask(__name__,
             template_folder='website/templates',
@@ -21,7 +20,7 @@ def home():
 
 if __name__ == "__main__":
     # This likely isn't a smart practice but it works ;D
-    if 'socket' in sys.modules:
-        app.run()
-    else:
+    if host:
         app.run(socket.gethostbyname(socket.gethostname()))
+    else:
+        app.run()
