@@ -33,6 +33,7 @@ function uploadFile() {
         previewBlock.style.backgroundImage = "";
         previewBlock.innerHTML = "<h1>Upload new File</h1><p>Drag and drop or click</p><p>to upload image</p>"
     }
+    document.getElementById("resultDisplay").classList.remove('active-animation');
 
 }
 
@@ -50,7 +51,7 @@ const form = document.getElementById("evaluateForm");
 
 form.addEventListener("submit", async function(e) {
     e.preventDefault();
-
+    document.getElementById("resultDisplay").classList.add('active-animation');
     const formData = new FormData();
     formData.append("file", fileTag.files[0]);
 
@@ -67,4 +68,5 @@ form.addEventListener("submit", async function(e) {
     } else {
         resultDiv.textContent = data.error;
     }
+
 });
