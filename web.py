@@ -19,7 +19,6 @@ def home():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    # This likely isn't a smart practice but it works ;D
     if host:
         app.run(socket.gethostbyname(socket.gethostname()))
     else:
