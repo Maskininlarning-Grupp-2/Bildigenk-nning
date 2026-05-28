@@ -4,6 +4,7 @@ var fileTag = document.getElementById("filetag"),
     previewBlock = document.getElementById("preview-block"),
     previewText = document.getElementById("textField-preview-block");
 
+
 fileTag.addEventListener("change", uploadFile) /*{
     const ext = this.files[0].name.split('.').pop().toLowerCase();
     var reader;
@@ -72,3 +73,11 @@ form.addEventListener("submit", async function(e) {
     }
 
 });
+
+function closeIt()
+{
+  fileTag.value = null
+  console.log("test")
+}
+
+window.onbeforeunload = closeIt;
