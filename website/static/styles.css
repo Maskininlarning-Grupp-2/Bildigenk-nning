@@ -1,6 +1,7 @@
 
 :root {
     --bg-color: gray;
+    --bg-color-variant: black;
     --text-color-comp: white;
 }
 
@@ -20,6 +21,22 @@ body {
     grid-template-columns: repeat(3, 1fr);
 }
 
+.linkButton {
+    cursor: pointer;
+    font-size: 100%;
+    flex-direction: row;
+    border: 1px solid var(--bg-color-variant);
+    background-color: var(--text-color-comp);
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+.linkButton:active {
+    transform: scale(0.95);
+    transition: 0.3s;
+}
+
 #middlePage {
     height: 100%;
     width: 105%;
@@ -30,6 +47,23 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(9, 1fr);
     align-items: center;
+    text-align: center;
+}
+
+.linkButtonModels {
+    cursor: pointer;
+    font-size: 100%;
+    flex-direction: row;
+    border: 1px solid var(--bg-color);
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: 0.5s;
+    grid-column-start: 2;
+}
+
+.linkButtonModels:active {
+    transform: scale(0.95);
+    transition: 0.3s;
 }
 
 /* ANIMAL RECOGNITION PAGE */
@@ -137,19 +171,18 @@ footer{
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 10%;
     text-align: center;
     align-items: center;
 }
 
 footer p, footer a{
-    margin-bottom: 0;
+    margin-top: 1px;
 
 }
 
-
-img {
-    width: 500px;
-    height: 500px;
+#ghIcon {
+    height: 50%;
 }
 
 
