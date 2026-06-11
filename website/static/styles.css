@@ -171,7 +171,7 @@ footer{
     left: 0;
     bottom: 0;
     width: 100%;
-    min-height: 50px;
+    max-height: 50px;
     text-align: center;
     align-items: center;
 }
