@@ -1,51 +1,125 @@
 
 :root {
     --bg-color: gray;
+    --bg-color-variant: black;
     --text-color-comp: white;
 }
 
 /* MAIN PAGE */
 body {
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 #parent {
+    margin-top: 3%;
+    margin-bottom: 3%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+}
+
+.linkButton {
+    cursor: pointer;
+    font-size: 100%;
+    flex-direction: row;
+    border: 1px solid var(--bg-color-variant);
+    background-color: var(--text-color-comp);
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+.linkButton:active {
+    transform: scale(0.95);
+    transition: 0.3s;
 }
 
 #middlePage {
-    -moz-box-shadow: -3px 0 5px 0 #555;
-    -webkit-box-shadow: -3px 0 5px 0 #555;
-    box-shadow: -3px 0 5px 0 #555;
+    height: 100%;
+    width: 105%;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 10px 7px;
     grid-column-start: 2;
     grid-row-start: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    align-items: center;
+    text-align: center;
 }
 
+.linkButtonModels {
+    cursor: pointer;
+    font-size: 100%;
+    flex-direction: row;
+    border: 1px solid var(--bg-color);
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: 0.5s;
+    grid-column-start: 2;
+}
 
+.linkButtonModels:active {
+    transform: scale(0.95);
+    transition: 0.3s;
+}
 
 /* ANIMAL RECOGNITION PAGE */
 
 #fileDisplay {
     grid-column-start: 2;
-    grid-row-start: 1;
+    grid-row: span 7 / span 7;
+}
+
+#drop-area {
+    text-align: center;
+}
+
+#preview-block {
+    align-items: center;
+    cursor: pointer;
+    width: 500px;
+    height: 300px;
+    transform: scale(1);
+    border-radius: 20px;
+    border: 2px solid var(--bg-color);
+    background: center center / cover rgb(247, 248, 255);
+    background-position: center center;
+    transition: 0.3s;
+}
+
+#preview-block:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
 }
 
 #fileUpload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-column-start: 2;
-    grid-row-start: 2;
+    grid-row-start: 8;
 }
 
 #resultDisplay {
-    grid-row: span 3 / span 3;
+    transform: scale(1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-column-start: 2;
-    grid-row-start: 3;
+    grid-row-start: 9;
 }
 
+#resultDisplay.active-animation {
+    animation: appear 0.5s 1;
+    transform: scale(1);
+}
+#resultDisplay.inactive-animation {
+    animation: disappear 0.5s 1;
+    transform: scale(0);
+}
 
 #preview {
     display: none;
@@ -73,23 +147,59 @@ nav ul {
   gap: 0.5rem;
 }
 
+input[type="submit"] {
+    cursor: pointer;
+    font-size: 100%;
+    flex-direction: row;
+    border: 1px solid var(--bg-color);
+    padding: 16px 32px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+input[type="submit"]:active {
+    transform: scale(0.95);
+    transition: 0.3s;
+}
+
+
+
 /* FOOTER */
 footer{
-  background-color: var(--bg-color);
-  color: var(--text-color-comp);
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+    background-color: var(--bg-color);
+    color: var(--text-color-comp);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 50px;
+    text-align: center;
+    align-items: center;
 }
 
-footer p{
-  margin-bottom: 0;
-  text-align: center;
+footer p, footer a{
+    margin-top: 1px;
+
+}
+
+#ghIcon {
+    height: 50%;
 }
 
 
-img {
-    width: 500px;
-    height: 500px;
+/* ANIMATION :D */
+@keyframes appear {
+    from {
+        transform:scale(0);
+    }
+    to {
+        transform:scale(1.0);
+    }
+}
+@keyframes disappear {
+    from {
+        transform:scale(1.0);
+    }
+    to {
+        transform:scale(0);
+    }
 }
